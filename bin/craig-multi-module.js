@@ -8,16 +8,25 @@ const cjsPath = path.join(process.cwd(), 'lib', 'cjs');
 const esmPath = path.join(process.cwd(), 'lib', 'esm');
 const srcPath = path.join(process.cwd(), 'src');
 
-const esmResult = spawn.sync('npx', ['swc', srcPath, '-d', esmPath, '--config-file', swcrcPath, '-C', 'module.type=es6'], {
+const handleError = (result) => {
+    if (result.error) {
+        console.error(result.error);
+        process.exit(1);
+    }
+};
+
+const esmResult = spawn.sync('swc', [srcPath, '-d', esmPath, '--config-file', swcrcPath, '-C', 'module.type=es6'], {
     stdio: 'inherit'
 });
+handleError(esmResult);
 
 if (esmResult.status !== 0) {
     process.exit(esmResult.status);
 }
 
-const cjsResult = spawn.sync('npx', ['swc', srcPath, '-d', cjsPath, '--config-file', swcrcPath, '-C', 'module.type=commonjs'], {
+const cjsResult = spawn.sync('swc', [srcPath, '-d', cjsPath, '--config-file', swcrcPath, '-C', 'module.type=commonjs'], {
     stdio: 'inherit'
 });
+handleError(cjsResult);
 
 process.exit(cjsResult.status);
