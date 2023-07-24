@@ -1,0 +1,44 @@
+[
+  {
+    "$schema": "https://json.schemastore.org/swcrc",
+    "test": ".jsx?$",
+    "jsc": {
+      "parser": {
+        "syntax": "ecmascript",
+        "jsx": true,
+        "topLevelAwait": true
+      },
+      "transform": {
+        "react": {
+          "runtime": "automatic"
+        }
+      },
+      "target": "es2020",
+      "loose": false
+    },
+    "module": {
+      "type": "es6"
+    }
+  },
+  {
+    "$schema": "https://json.schemastore.org/swcrc",
+    "test": ".tsx?$",
+    "jsc": {
+      "parser": {
+        "syntax": "typescript",
+        "jsx": true,
+        "topLevelAwait": true
+      },
+      "transform": {
+        "react": {
+          "runtime": "automatic"
+        }
+      },
+      "target": "es2020",
+      "loose": false
+    },
+    "module": {
+      "type": "es6"
+    }
+  }
+]
