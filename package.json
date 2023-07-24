@@ -17,7 +17,7 @@
     "bin"
   ],
   "peerDependencies": {
-    "@swc/cli": "^0.1.62",
+    "@swc/cli": "^0.1.62"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.62"
