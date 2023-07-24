@@ -3,6 +3,9 @@
   "version": "1.0.0-beta",
   "author": "craigmiller160",
   "sideEffects": false,
+  "bin": {
+    "craig-multi-module": "./bin/craig-multi-module.js"
+  },
   "publishConfig": {
     "registry": "https://nexus-craigmiller160.ddns.net/repository/npm-private/"
   },
