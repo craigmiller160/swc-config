@@ -16,8 +16,13 @@
     ".swcrc",
     "bin"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "@swc/cli": "^0.1.62",
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.62"
+  },
+  "dependencies": {
     "@swc/core": "^1.3.70",
     "cross-spawn": "^7.0.3"
   }
